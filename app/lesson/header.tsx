@@ -24,8 +24,14 @@ export const Header = ({
             />
             <Progress value={percentage} />
             <div className="flex items-center font-bold text-rose-500 ">
-                <Image src='/heart.svg' alt="Heart" width={28} height={28} className="mr-2" />
-                {hasActiveSubscription ? <InfinityIcon className="w-6 h-6 stroke-[3]" /> : hearts}
+                <Image
+                    src='/heart.svg'
+                    alt="Heart"
+                    width={28}
+                    height={28}
+                    className="mr-2"
+                />
+                {hasActiveSubscription ? <InfinityIcon className="w-6 h-6 stroke-0" /> : hearts}
             </div>
         </header>
     )

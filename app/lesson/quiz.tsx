@@ -9,7 +9,7 @@ import { useAudio, useWindowSize, useMount } from "react-use";
 
 import { reduceHearts } from "@/actions/user-progress";
 import { useHeartsModal } from "@/store/use-hearts-modal";
-import { challengeOptions, challenges } from "@/db/schema"
+import { challengeOptions, challenges, userSubscription } from "@/db/schema"
 import { usePracticeModal } from "@/store/use-practice-modal";
 import { upsertChallengeProgress } from "@/actions/сhallenge-progress";
 
@@ -27,7 +27,9 @@ type Props = {
     })[],
     initialHearts: number,
     initialPercentage: number,
-    userSubscription: any,
+    userSubscription: typeof userSubscription.$inferSelect & {
+        isActive: boolean;
+    } | null,
 }
 
 export const Quiz = (
